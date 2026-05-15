@@ -63,3 +63,30 @@ function adicionarMateria() {
         alert("Matéria adicionada com sucesso!");
     }
 }
+
+function proximaImagem() {
+    imagemAtual++;
+
+    if (imagemAtual >= imagens.length) {
+        imagemAtual = 0;
+    }
+
+    document.getElementById("imagem").src = imagens[imagemAtual];
+}
+
+function voltarImagem() {
+    imagemAtual--;
+
+    if (imagemAtual < 0) {
+        imagemAtual = imagens.length - 1;
+    }
+
+    document.getElementById("imagem").src = imagens[imagemAtual];
+}
+
+function sair() {
+    alert("Você saiu do sistema.");
+
+    document.getElementById("sistema").style.display = "none";
+    document.getElementById("login").style.display = "block";
+}
