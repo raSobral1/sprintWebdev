@@ -1,9 +1,9 @@
 let materias = ["Front-end", "Cálculo", "Python", "Web-Development"];
 
 let imagens = [
-    "imagens/see.png",
-    "imagens/home.png",
-    "imagens/galeria.png"
+    "imagens/see.jpg",
+    "imagens/home.jpg",
+    "imagens/galeria.jpg"
 ];
 
 let imagemAtual = 0;
