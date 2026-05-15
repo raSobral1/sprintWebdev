@@ -30,3 +30,36 @@ function fazerLogin() {
 
     alert("Login realizado com sucesso!");
 }
+
+function mostrarMaterias() {
+    let lista = document.getElementById("listaMaterias");
+    lista.innerHTML = "";
+
+    for (let i = 0; i < materias.length; i++) {
+        lista.innerHTML += "<li>" + materias[i] + "</li>";
+    }
+}
+
+function ativarSLID() {
+    alert("Modo SLID ativado!");
+
+    let confirmar = confirm("Deseja simular o funcionamento do SLID?");
+
+    if (confirmar) {
+        alert("Câmera ativada, áudio capturado e conteúdo identificado.");
+    } else {
+        alert("Simulação cancelada.");
+    }
+}
+
+function adicionarMateria() {
+    let novaMateria = prompt("Digite o nome da nova matéria:");
+
+    if (novaMateria === "" || novaMateria === null) {
+        alert("Nenhuma matéria foi adicionada.");
+    } else {
+        materias.push(novaMateria);
+        mostrarMaterias();
+        alert("Matéria adicionada com sucesso!");
+    }
+}
