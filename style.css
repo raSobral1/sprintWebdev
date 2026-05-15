@@ -1,0 +1,28 @@
+/* * {
+    background-color: #1d3557;    
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #00172e;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+div {
+    background-color: white;
+    width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+input {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+}
