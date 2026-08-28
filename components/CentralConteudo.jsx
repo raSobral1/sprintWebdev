@@ -36,9 +36,7 @@ export default function CentralConteudo({
       .includes(busca.toLowerCase()),
   );
 
-  const recentes = [...conteudos]
-    .sort((a, b) => new Date(b.dataCriacao) - new Date(a.dataCriacao))
-    .slice(0, 2);
+  const recentes = conteudos.slice(0, 2);
 
   const primeiroItem = conteudos.find(
     (conteudo) => conteudo.id === Number(primeiroId),
@@ -46,6 +44,10 @@ export default function CentralConteudo({
   const segundoItem = conteudos.find(
     (conteudo) => conteudo.id === Number(segundoId),
   );
+
+  const arquivoJSON =
+    "data:text/json;charset=utf-8," +
+    encodeURIComponent(JSON.stringify(conteudos, null, 2));
 
   function enviarConteudo(evento) {
     evento.preventDefault();
@@ -80,18 +82,6 @@ export default function CentralConteudo({
     }
   }
 
-  function exportarConteudos() {
-    const arquivo = new Blob([JSON.stringify(conteudos, null, 2)], {
-      type: "application/json",
-    });
-    const endereco = URL.createObjectURL(arquivo);
-    const link = document.createElement("a");
-    link.href = endereco;
-    link.download = "conteudos-slid.json";
-    link.click();
-    URL.revokeObjectURL(endereco);
-  }
-
   return (
     <section className="card central">
       <div className="titulo-linha">
@@ -99,9 +89,9 @@ export default function CentralConteudo({
           <h3>Central de conteúdo</h3>
           <p>Todos os materiais reunidos em um só lugar.</p>
         </div>
-        <button type="button" onClick={exportarConteudos}>
+        <a className="botao" href={arquivoJSON} download="conteudos-slid.json">
           Exportar JSON
-        </button>
+        </a>
       </div>
 
       <input

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CentralConteudo from "./CentralConteudo";
 import Login from "./Login";
 import Slideshow from "./Slideshow";
@@ -15,7 +15,7 @@ const conteudosIniciais = [
     pasta: "Aulas",
     privado: false,
     vencimento: "2026-09-03",
-    dataCriacao: "2026-08-28T10:00:00",
+    dataCriacao: "28/08/2026",
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const conteudosIniciais = [
     pasta: "Revisões",
     privado: true,
     vencimento: "2026-09-10",
-    dataCriacao: "2026-08-27T10:00:00",
+    dataCriacao: "27/08/2026",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const conteudosIniciais = [
     pasta: "Aulas",
     privado: false,
     vencimento: "",
-    dataCriacao: "2026-08-26T10:00:00",
+    dataCriacao: "26/08/2026",
   },
 ];
 
@@ -41,7 +41,7 @@ function criarConteudo(dadosDoFormulario) {
   return {
     ...dadosDoFormulario,
     id: Date.now(),
-    dataCriacao: new Date().toISOString(),
+    dataCriacao: new Date().toLocaleDateString("pt-BR"),
   };
 }
 
@@ -51,40 +51,31 @@ export default function Sistema() {
   const [pastas, setPastas] = useState(pastasIniciais);
   const [historico, setHistorico] = useState([]);
   const [lixeira, setLixeira] = useState([]);
-  const [dadosCarregados, setDadosCarregados] = useState(false);
-
-  // Recupera os dados que estavam salvos no navegador.
-  useEffect(() => {
-    const carregamento = setTimeout(() => {
-      const dadosSalvos = localStorage.getItem("dadosSLID");
-
-      if (dadosSalvos) {
-        const dados = JSON.parse(dadosSalvos);
-        setConteudos(dados.conteudos || conteudosIniciais);
-        setPastas(dados.pastas || pastasIniciais);
-        setHistorico(
-          (dados.historico || []).map((item) =>
-            typeof item === "string" ? item : item.texto,
-          ),
-        );
-        setLixeira(dados.lixeira || []);
-      }
-
-      setDadosCarregados(true);
-    }, 0);
-
-    return () => clearTimeout(carregamento);
-  }, []);
-
-  useEffect(() => {
-    if (dadosCarregados) {
-      const dados = { conteudos, pastas, historico, lixeira };
-      localStorage.setItem("dadosSLID", JSON.stringify(dados));
-    }
-  }, [conteudos, pastas, historico, lixeira, dadosCarregados]);
 
   function registrarAcao(texto) {
     setHistorico((lista) => [texto, ...lista].slice(0, 20));
+  }
+
+  function salvarDados() {
+    const dados = { conteudos, pastas, historico, lixeira };
+    localStorage.setItem("dadosSLID", JSON.stringify(dados));
+    alert("Dados salvos no navegador.");
+  }
+
+  function carregarDados() {
+    const dadosSalvos = localStorage.getItem("dadosSLID");
+
+    if (!dadosSalvos) {
+      alert("Nenhum dado salvo foi encontrado.");
+      return;
+    }
+
+    const dados = JSON.parse(dadosSalvos);
+    setConteudos(dados.conteudos || conteudosIniciais);
+    setPastas(dados.pastas || pastasIniciais);
+    setHistorico((dados.historico || []).map((item) => item.texto || item));
+    setLixeira(dados.lixeira || []);
+    alert("Dados carregados.");
   }
 
   function adicionarConteudo(dadosDoFormulario) {
@@ -181,26 +172,16 @@ export default function Sistema() {
     }
   }
 
-  const hoje = new Date();
-  hoje.setHours(0, 0, 0, 0);
-
-  const avisos = conteudos.filter((conteudo) => {
-    if (!conteudo.vencimento) return false;
-
-    const vencimento = new Date(`${conteudo.vencimento}T00:00:00`);
-    const dias = Math.ceil((vencimento - hoje) / (1000 * 60 * 60 * 24));
-    return dias >= 0 && dias <= 7;
-  });
+  const avisos = conteudos.filter((conteudo) => conteudo.vencimento !== "");
 
   const publicos = conteudos.filter((conteudo) => !conteudo.privado).length;
   const percentualPublico = conteudos.length
     ? Math.round((publicos / conteudos.length) * 100)
     : 0;
 
-  const seteDiasAtras = new Date();
-  seteDiasAtras.setDate(seteDiasAtras.getDate() - 7);
-  const adicionadosNaSemana = conteudos.filter(
-    (conteudo) => new Date(conteudo.dataCriacao) >= seteDiasAtras,
+  const dataDeHoje = new Date().toLocaleDateString("pt-BR");
+  const adicionadosHoje = conteudos.filter(
+    (conteudo) => conteudo.dataCriacao === dataDeHoje,
   ).length;
 
   const quantidadePorCategoria = {};
@@ -229,6 +210,12 @@ export default function Sistema() {
           <button type="button" onClick={ativarSLID}>
             Ativar SLID
           </button>
+          <button type="button" onClick={salvarDados}>
+            Salvar dados
+          </button>
+          <button type="button" onClick={carregarDados}>
+            Carregar dados
+          </button>
           <button type="button" onClick={() => setUsuario("")}>
             Sair
           </button>
@@ -238,11 +225,13 @@ export default function Sistema() {
       <section className="card notificacoes">
         <h3>Notificações</h3>
         {avisos.length === 0 ? (
-          <p>Nenhum conteúdo vence nos próximos 7 dias.</p>
+          <p>Nenhum conteúdo possui data de vencimento.</p>
         ) : (
           <ul>
             {avisos.map((conteudo) => (
-              <li key={conteudo.id}>{conteudo.titulo} vence em breve.</li>
+              <li key={conteudo.id}>
+                {conteudo.titulo} vence em {conteudo.vencimento}.
+              </li>
             ))}
           </ul>
         )}
@@ -268,7 +257,7 @@ export default function Sistema() {
 
           <div className="numeros">
             <p><strong>{conteudos.length}</strong> conteúdos</p>
-            <p><strong>{adicionadosNaSemana}</strong> nos últimos 7 dias</p>
+            <p><strong>{adicionadosHoje}</strong> adicionados hoje</p>
             <p><strong>{percentualPublico}%</strong> públicos</p>
           </div>
 

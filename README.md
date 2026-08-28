@@ -1,90 +1,86 @@
 # Jovi - Modo SLID
 
-Projeto acadêmico da Sprint 3 de Web Development. O projeto anterior foi migrado de HTML, CSS e JavaScript para Next.js com React e componentes funcionais.
+Projeto acadêmico da Sprint 3 de Web Development. O protótipo feito anteriormente em HTML, CSS e JavaScript foi migrado para Next.js com componentes React.
 
 ## Funcionalidades
 
 - Login com validação simples;
-- Central de conteúdos com busca e destaque para itens recentes;
+- Central de conteúdos com busca e destaque para os itens mais recentes, que ficam no início da lista;
 - Criação de pastas e reorganização manual dos conteúdos;
-- Adição, edição e exclusão de conteúdos;
-- Dados, histórico e lixeira salvos no `localStorage`;
-- Estatísticas por categoria e pelos últimos 7 dias;
-- Notificações de vencimento e controle público ou privado;
-- Exportação em JSON e comparação de dois itens lado a lado;
-- Recuperação de itens excluídos;
-- Slideshow com as imagens do protótipo;
-- Sorteio de imagem com `Math.random()` e `Math.floor()`;
-- Percentual de conteúdos públicos calculado com `Math.round()`;
-- Simulação do Modo SLID;
-- Componentes pai e filho usando propriedades.
+- Adição, edição e remoção de conteúdos;
+- Controle de conteúdo público ou privado;
+- Notificações para conteúdos com data de vencimento;
+- Histórico das alterações;
+- Estatísticas por categoria e de conteúdos adicionados no dia;
+- Exportação dos conteúdos em JSON;
+- Comparação de dois conteúdos lado a lado;
+- Lixeira com recuperação de conteúdo;
+- Slideshow com imagens verticais do protótipo;
+- Salvamento e carregamento pelo `localStorage`;
+- Uso de `Math.random()`, `Math.floor()` e `Math.round()`.
 
 ## Tecnologias utilizadas
 
-<<<<<<< HEAD
 - Next.js 16;
 - React 19;
 - JavaScript e JSX;
-- CSS;
+- HTML e CSS;
 - ESLint;
 - React Compiler;
 - LocalStorage.
 
-## Configuração escolhida no Create Next App
-
-- TypeScript: No;
-- Linter: ESLint;
-- React Compiler: Yes;
-- Tailwind CSS: No;
-- Pasta `src`: No;
-- App Router: Yes;
-- Personalizar alias: No;
-- Incluir `AGENTS.md`: No.
-
 ## Como instalar
 
-É necessário ter o Node.js 20.9 ou superior instalado.
+É necessário ter o Node.js 20.9 ou uma versão mais recente.
 
-Entre na pasta do projeto e instale as dependências:
+Abra o terminal na pasta do projeto e execute:
 
-cd sprintWebdev
+```bash
 npm install
+```
 
 ## Como executar
 
+```bash
 npm run dev
+```
+
 
 ## Login para teste
 
-- Nome: qualquer nome não vazio. Exemplo: `Rafael`;
+- Nome: qualquer nome que não esteja vazio. Exemplo: `Rafael`;
 - Senha: qualquer senha com pelo menos quatro caracteres. Exemplo: `1234`.
 
-## Componentes principais
+## Como usar o localStorage
 
-- `Cabecalho.jsx`: cabeçalho da página;
-- `Login.jsx`: formulário de login;
-- `Sistema.jsx`: componente pai com o localStorage, notificações, histórico e lixeira;
-- `CentralConteudo.jsx`: componente filho com busca, pastas e ações;
-- `Slideshow.jsx`: imagens e operações com `Math`;
-- `Rodape.jsx`: rodapé da página.
+- Clique em **Salvar dados** para guardar conteúdos, pastas, histórico e lixeira no navegador;
+- Clique em **Carregar dados** para recuperar o que foi salvo.
 
-A estrutura foi mantida simples para demonstrar claramente a passagem de dados do componente pai para os componentes filhos.
+## Componentes
 
-## IA no projeto
+- `Cabecalho.jsx`: mostra o título da página;
+- `Login.jsx`: contém o formulário de entrada;
+- `Sistema.jsx`: componente pai que controla os dados e as funções principais;
+- `CentralConteudo.jsx`: componente filho que recebe dados e funções por propriedades;
+- `Slideshow.jsx`: mostra as imagens e utiliza operações com `Math`;
+- `Rodape.jsx`: mostra o rodapé.
 
-- A Ia foi utilizada para fazer as estilizaçoes CSS, dar sugestoes para o esquelo HTML e organizar o README. Auxiliou, deu exemplos, explicou parte a parte de como os componentes poderiam ser organizados para a página. Auxiliou e corrigiu erros voltados a parte do sistema, como exportar JSON, Histórico e estatísticas do usuario, salvamento de dados, manipulacoes de listas e uso de hooks, onde foi mais complexo. Revisou o codigo e retirou partes desnecessarias que ocupavam mais memoria, deixando mais limpo. A Ia foi um auxiliador e professor para esse projeto, explicando cada parte que achavamos confuso e principamente nós gerando aprendizado
+## Uso de IA
+
+A Ia foi utilizada para fazer as estilizaçoes CSS, dar sugestoes para o esquelo HTML e organizar o README. Auxiliou, deu exemplos, explicou parte a parte de como os componentes poderiam ser organizados para a página. Auxiliou e corrigiu erros voltados a parte do sistema, como exportar JSON, Histórico e estatísticas do usuario, salvamento de dados, manipulacoes de listas e uso de hooks, onde foi mais complexo. Revisou o codigo e retirou partes desnecessarias que ocupavam mais memoria, deixando mais limpo. A Ia foi um auxiliador e professor para esse projeto, explicando cada parte que achavamos confuso e principamente nós gerando aprendizado
 
 ## Integrantes
 
-- Erick Ripari Gomes - RM 569441
-- Fabricio Denig de Avila - RM 570980
-- Guilherme Mazzini Nunes Canno - RM 573183
-- Luan Schinello Garbin - RM 571276
-- Rafael Taboada Sobral - RM 569527
-=======
-Rafael Taboada Sobral - 569527
+- Erick Ripari Gomes - RM 569441.
+- Fabricio Denig de Avila - RM 570980.
+- Guilherme Mazzini Nunes Canno - RM 573183.
+- Luan Schinello Garbin - RM 571276.
+- Rafael Taboada Sobral - RM 569527.
 
-Link GitHub:
+## GitHub
 
-https://github.com/raSobral1/sprintWebdev.git
->>>>>>> 14ee73c090c8b8c422f814ee3570fef7b8e147db
+[Repositório do projeto](https://github.com/raSobral1/sprintWebdev)
+
+## Vercel 
+
+https://jovi-gamma.vercel.app/
