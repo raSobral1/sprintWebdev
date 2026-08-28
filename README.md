@@ -21,6 +21,7 @@ Projeto acadêmico da Sprint 3 de Web Development. O projeto anterior foi migrad
 
 ## Tecnologias utilizadas
 
+<<<<<<< HEAD
 - Next.js 16;
 - React 19;
 - JavaScript e JSX;
@@ -80,3 +81,10 @@ A estrutura foi mantida simples para demonstrar claramente a passagem de dados d
 - Guilherme Mazzini Nunes Canno - RM 573183
 - Luan Schinello Garbin - RM 571276
 - Rafael Taboada Sobral - RM 569527
+=======
+Rafael Taboada Sobral - 569527
+
+Link GitHub:
+
+https://github.com/raSobral1/sprintWebdev.git
+>>>>>>> 14ee73c090c8b8c422f814ee3570fef7b8e147db
