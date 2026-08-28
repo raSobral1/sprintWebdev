@@ -75,7 +75,7 @@ npm run dev
 
 ## Uso de IA
 
-A Ia foi utilizada para fazer as estilizaçoes CSS, dar sugestoes para o esquelo HTML e organizar o README. Auxiliou, deu exemplos, explicou parte a parte de como os componentes poderiam ser organizados para a página. Auxiliou e corrigiu erros voltados a parte do sistema, como exportar JSON, Histórico e estatísticas do usuario, salvamento de dados, manipulacoes de listas e uso de hooks, onde foi mais complexo. Revisou o codigo e retirou partes desnecessarias que ocupavam mais memoria, deixando mais limpo. A Ia foi um auxiliador e professor para esse projeto, explicando cada parte que achavamos confuso e principamente nós gerando aprendizado
+A Ia foi utilizada para fazer as estilizaçoes CSS, dar sugestoes para o esqueleto do HTML e organizar o README. Auxiliou, deu exemplos, explicou parte a parte de como os componentes poderiam ser organizados para a página. Auxiliou e corrigiu erros voltados a parte do sistema, como exportar JSON, Histórico e estatísticas do usuario, salvamento de dados, manipulacoes de listas e uso de hooks, onde foi mais complexo. Revisou o codigo e retirou partes desnecessarias que ocupavam mais memoria, deixando mais limpo. A Ia foi um auxiliador e professor para esse projeto, explicando cada parte que achavamos confuso e principamente nós gerando aprendizado
 
 ## Integrantes
 
