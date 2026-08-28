@@ -1,0 +1,307 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #00172e;
+  background-color: #00172e;
+}
+
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  padding: 22px;
+  color: white;
+  text-align: center;
+}
+
+header h1,
+header p,
+footer p {
+  margin: 5px;
+}
+
+main {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto 30px;
+  flex: 1;
+}
+
+.card {
+  padding: 22px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 12px;
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0;
+}
+
+.card h4 {
+  margin-bottom: 10px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  border-radius: 6px;
+  background-color: white;
+}
+
+button {
+  padding: 9px 13px;
+  color: white;
+  background-color: #1d3557;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #457b9d;
+}
+
+.login {
+  max-width: 500px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.login input {
+  margin-bottom: 10px;
+}
+
+.login button {
+  width: 100%;
+}
+
+.erro {
+  color: #b00020;
+  font-size: 14px;
+}
+
+.boas-vindas,
+.titulo-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.boas-vindas p,
+.titulo-linha p {
+  margin-bottom: 0;
+}
+
+.acoes,
+.acoes-item,
+.botoes-slideshow {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.notificacoes {
+  border-left: 6px solid #f4a261;
+}
+
+.notificacoes p {
+  margin-bottom: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.busca {
+  margin: 18px 0;
+}
+
+.recentes,
+.pastas {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.recentes span,
+.pastas span {
+  padding: 7px 10px;
+  background-color: #e8f0f5;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+.form-pasta {
+  max-width: 500px;
+  display: flex;
+  gap: 8px;
+}
+
+.form-conteudo {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.lista-conteudos {
+  margin-top: 20px;
+}
+
+.item-conteudo {
+  display: grid;
+  grid-template-columns: 1.4fr 180px 2fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 9px;
+  background-color: #f1f1f1;
+  border-radius: 7px;
+}
+
+.item-conteudo p {
+  margin: 5px 0 0;
+  color: #555555;
+  font-size: 14px;
+}
+
+.acoes-item button {
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+.comparacao {
+  padding-top: 10px;
+  border-top: 1px solid #cccccc;
+}
+
+.comparacao > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.selecao-comparacao {
+  margin-bottom: 12px;
+}
+
+.comparacao article {
+  padding: 15px;
+  background-color: #e8f0f5;
+  border-radius: 7px;
+}
+
+.comparacao p {
+  margin: 8px 0 0;
+}
+
+.conteudo-secundario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.slideshow {
+  text-align: center;
+}
+
+.slideshow img {
+  width: 100%;
+  max-width: 412px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.botoes-slideshow {
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.numeros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.numeros p {
+  padding: 10px;
+  background-color: #e8f0f5;
+  border-radius: 7px;
+  text-align: center;
+}
+
+.numeros strong {
+  display: block;
+  font-size: 22px;
+}
+
+.historico li,
+.notificacoes li,
+.lixeira li {
+  padding: 9px;
+  margin-bottom: 7px;
+  background-color: #f1f1f1;
+  border-radius: 6px;
+}
+
+.historico li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.historico small {
+  color: #666666;
+}
+
+.lixeira li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 850px) {
+  .form-conteudo,
+  .item-conteudo,
+  .conteudo-secundario {
+    grid-template-columns: 1fr;
+  }
+
+  .boas-vindas,
+  .titulo-linha {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 550px) {
+  .form-pasta,
+  .comparacao > div,
+  .numeros {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .form-pasta button {
+    width: 100%;
+  }
+}
