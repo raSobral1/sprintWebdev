@@ -21,7 +21,6 @@ Projeto acadêmico da Sprint 3 de Web Development. O projeto anterior foi migrad
 
 ## Tecnologias utilizadas
 
-<<<<<<< HEAD
 - Next.js 16;
 - React 19;
 - JavaScript e JSX;
@@ -47,12 +46,14 @@ Projeto acadêmico da Sprint 3 de Web Development. O projeto anterior foi migrad
 
 Entre na pasta do projeto e instale as dependências:
 
-cd sprintWebdev
-npm install
+-cd sprintWebdev
+
+-npm install
+
 
 ## Como executar
 
-npm run dev
+-npm run dev
 
 ## Login para teste
 
@@ -88,4 +89,4 @@ https://github.com/raSobral1/sprintWebdev.git
 
 Link Vercel: 
 
-jovi-gamma.vercel.app
+https://jovi-gamma.vercel.app
