@@ -35,6 +35,7 @@ Projeto acadêmico da Sprint 3 de Web Development. O protótipo feito anteriorme
 
 Abra o terminal na pasta do projeto e execute:
 
+<<<<<<< HEAD
 ```bash
 npm install
 ```
@@ -45,6 +46,16 @@ npm install
 npm run dev
 ```
 
+=======
+-cd sprintWebdev
+
+-npm install
+
+
+## Como executar
+
+-npm run dev
+>>>>>>> 854fd0635d53f75b735839f8526f2db1bba9b2d7
 
 ## Login para teste
 
@@ -71,16 +82,32 @@ A Ia foi utilizada para fazer as estilizaçoes CSS, dar sugestoes para o esquelo
 
 ## Integrantes
 
+<<<<<<< HEAD
 - Erick Ripari Gomes - RM 569441.
 - Fabricio Denig de Avila - RM 570980.
 - Guilherme Mazzini Nunes Canno - RM 573183.
 - Luan Schinello Garbin - RM 571276.
 - Rafael Taboada Sobral - RM 569527.
+=======
+- Erick Ripari Gomes - RM 569441
+- Fabricio Denig de Avila - RM 570980
+- Guilherme Mazzini Nunes Canno - RM 573183
+- Luan Schinello Garbin - RM 571276
+- Rafael Taboada Sobral - RM 569527
+>>>>>>> 854fd0635d53f75b735839f8526f2db1bba9b2d7
 
 ## GitHub
 
+<<<<<<< HEAD
 [Repositório do projeto](https://github.com/raSobral1/sprintWebdev)
 
 ## Vercel 
 
 https://jovi-gamma.vercel.app/
+=======
+https://github.com/raSobral1/sprintWebdev.git
+
+Link Vercel: 
+
+https://jovi-gamma.vercel.app
+>>>>>>> 854fd0635d53f75b735839f8526f2db1bba9b2d7
