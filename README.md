@@ -85,7 +85,6 @@ A estrutura foi mantida simples para demonstrar claramente a passagem de dados d
 Link GitHub:
 
 https://github.com/raSobral1/sprintWebdev.git
->>>>>>> 14ee73c090c8b8c422f814ee3570fef7b8e147db
 
 Link Vercel: 
 
